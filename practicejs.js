@@ -130,5 +130,7 @@ if (round1=="pass"){
     }
 else{
     console.log("candidate is fail in 1st round")
-}
+}   
+
+// akshay ios a gppa aj ak //
 
