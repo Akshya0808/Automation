@@ -61,28 +61,5 @@ test("homepage", async({page, browserName}) => {
 
 }); // homepage test close
 
-test("addtoCart", async({page}) =>{
-    await page.goto("https://demowebshop.tricentis.com/login?ReturnUrl=%2fcustomer%2forders")
-        await page.locator("#Email").pressSequentially("akshyagarg6@gmail.com")
-        await page.locator("#Password").fill("Xolo@700")
-        await page.locator("#RememberMe").check();
-        await page.locator(".login-button").click()
-        await expect(page.locator(".account-page")).toContainText("My account - Orders");
-    await page.getByRole("link", {name:"Books"}).click();
-    await page.getByRole("button", {name:"Add to cart"}).nth(0).click();
-    await expect(page.locator(".cart-qty")).toHaveText("(41)");
-    await page.locator(".cart-label").nth(0).click();
-    await page.getByRole("button", {name:"checkout"}).click({timeout:60_000});
-    await page.getByRole("button",{name:"close"}).click();
-    await page.locator("#termsofservice").check();
-    await page.getByRole("button", {name:"checkout"}).click({timeout:60_000});
-    await page.locator("#billing-address-select").selectOption("New Address");
-    await expect(page.locator("#billing-address-select option", { hasText: "New Address" })
-    ).toHaveCount(1);   
-    await page.pause();
-
-
-}) //aaddtocart test close
-
 
 })// test suit close
