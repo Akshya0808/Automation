@@ -19,7 +19,7 @@ export default defineConfig({
   // Common settings
   use: {
     ...devices['Desktop Chrome'],
-    headless: false,
+    headless: true,
     trace: 'on',
     video: 'on',
   },
