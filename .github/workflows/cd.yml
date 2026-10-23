@@ -14,3 +14,15 @@ jobs:
 
       - name: Show delivery message
         run: echo "CD pipeline started successfully!"
+
+      - name: Create delivery package
+        run: |
+          mkdir delivery-package
+          echo "My first delivery package" > delivery-package/readme.txt
+
+      - name: Upload delivery artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: delivery-package
+          path: delivery-package/
+
