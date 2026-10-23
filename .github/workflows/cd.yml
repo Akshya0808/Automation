@@ -1,0 +1,16 @@
+
+name: CD - Continuous Delivery
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delivery:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Show delivery message
+        run: echo "CD pipeline started successfully!"
